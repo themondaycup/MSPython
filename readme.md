@@ -1,4 +1,4 @@
-Notes on the topics covered in this learning. 
+Notes from [Microsoft Learning for Python.](https://learn.microsoft.com/en-us/training/paths/beginner-python/)
 
 # Boolean Logic
 common logic operators
@@ -79,4 +79,30 @@ used to evaluate multiple condition in one statement
 syntax:
 ```python
 sub-expresssion1 or sub-expression2
-```# MSPython
+```
+
+`and` statement can connect two boolean expressions. Both expressions must evalute to `True`, otherwise the case will be `False`. 
+
+syntax:
+```python
+sub-expression1 and sub-expression2
+```
+
+Truth Table for `and`
+
+| Subexpression1  | Operator | Subexpression2 | Result |
+| ------------- | ------------- | ------------ | ------------ |
+| True  | and  | True | True |
+| True  | and  | False | False |
+| False  | and  | True | False |
+| False  | and  | False | False |
+
+
+Truth table for `or`
+
+| Subexpression1  | Operator | Subexpression2 | Result |
+| ------------- | ------------- | ------------ | ------------ |
+| True  | or  | True | True |
+| True  | or  | False | True |
+| False  | or  | True | True |
+| False  | or  | False | False |
