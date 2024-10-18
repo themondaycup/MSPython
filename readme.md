@@ -391,3 +391,133 @@ print("Jupiter is the", jupiter_index + 1, "planet from the sun")
 ```
 
 "Because indexing starts with 0, you need to add 1 to display the proper number."
+
+### Store numbers in lists
+Same way to create a list you can do it with numbers as well. Creating it with a bracket, in this example numbers with a decimal places will be stored
+
+```python
+gravity_on_planets = [0.378, 0.907, 1, 0.377, 2.36, 0.916, 0.889, 1.12]
+```
+
+We can then multiply two of the values from the list
+```python
+gravity_on_planets = [0.378, 0.907, 1, 0.377, 2.36, 0.916, 0.889, 1.12]
+bus_weigh = 124054 # in Newtons, on Earth
+
+print("On Earth, a double-decker bus weighs", bus_weight, "N")
+print("On Mercury, a double-decker bus weighs", bus_weight * gravity_on_planets[0], "N")
+```
+
+### Min() and Max()
+- `min()` will return the smallest number in the list
+- `max()` will return the largest number in the list
+
+In this case for the gravity on the planets it will be used as such:
+
+```python
+gravity_on_planets = [0.378, 0.907, 1, 0.377, 2.36, 0.916, 0.889, 1.12]
+bus_weigh = 124054 # in Newtons, on Earth
+
+print("On Earth, a double-decker bus weighs", bus_weight, "N")
+print("The lightest a bus would be in the solar system is", bus_weight * min(gravity_on_planets), "N")
+print("The heaviest a bus would be in the solar system is", bus_weight * max(gravity_on_planets), "N")
+```
+
+### Slice
+
+- In order to retrieve a portion of a list a *slice* is needed. It has a starting and ending indexes but the start is the starting inded while the end, ends before (and does not include) the ending index. 
+
+```python
+planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Nepture"]
+planets_before_earth = planets[0:2] # this is the slice
+print(planets_before_earth)
+
+#output: Mercury, Venus
+```
+
+To get everything in the list without putting the last value you can just put the starting value. Pythin will assume that you want to go to the end of the list
+
+```python
+planets_after_earth = planets[3:8]
+print(planets_after_earth)
+
+#or 
+
+planets_after_earth = planets[3:]
+print(planets_after_earth)
+```
+
+### Join list
+
+Joining two list to return a new list you use the `+` operator. This can join two list together and make a new list
+
+```python
+amalthea_group = ["metis", "adrastra", "amalthea", "thebe"]
+galilean_moons = ["io", "europa", "ganymede", "callisto"]
+
+regular_satellite_moons = amalthea_group + galilean_moons
+print("The regular satellite moons of jupiter are", regular_satellite_moons)
+```
+
+### Sort list
+
+- `.sort()`this method will sort a list of string in alphabetical order and a list of number in numeric order
+- to sort in reverse order use `.sort(reverse=True)` on the list. 
+
+```python
+amalthea_group = ["metis", "adrastra", "amalthea", "thebe"]
+galilean_moons = ["io", "europa", "ganymede", "callisto"]
+
+regular_satellite_moons = amalthea_group + galilean_moons
+regular_satellite_moons.sort() # here is where the list will be sorted
+print("The regular satellite moons of jupiter are", regular_satellite_moons)
+```
+
+# Loops
+
+### While loop
+
+- "A `while` loop performs an operation *while* a certain condition is true. You could use a `while` loop to:
+- check for another line in a file.
+- check if a flag has been set
+- check if a user has finished entering values
+- check if something else has changed to indicate that the code can stop performing the operation."
+
+its important to remember when creating a `while` loop to ensure that condition change. If not then python will continue to run the code until the program crashes.
+
+"A`while` loop has three important parts:
+1. the keyword `while`, followed by a space.
+2. the condition you test. if the condition is true, the code inside the while loop runs.
+3. the code want to run for each iteration, indented while nested whitespace."
+
+```python
+#syntax
+while <condition>:
+    # code here
+
+#example:
+user_input = ''
+
+while user_input.lower() != 'done':
+    user_input = input('Enter a new value, or done when done')
+#the user_input is the condition that is test for the while loop
+```
+### For loop
+
+- "The `for` loop is a statement with five important parts:
+1. the word `for`, followed by a space.
+2. the variable name you want to create for each value in teh sequence (`number`). Note multiple variables need to be separated by commas.
+3. The word `in`, surrounded by spaces.
+4. The name of the list (`countdown`, in the preceding example), or iterable that you want to loop over, followed by a colon (`:`)
+5. The code you want to run for each item in the iterable, spearated by nested whitespaces."
+
+```python
+from time import sleep
+
+countdown = [4,3,2,1,0]
+
+for number in countdown:
+    print(number)
+    sleep(1) # wait 1 second
+print("blast off! ")
+```
