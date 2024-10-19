@@ -521,3 +521,43 @@ for number in countdown:
     sleep(1) # wait 1 second
 print("blast off! ")
 ```
+
+# Dictionaries
+
+### Creating a dictionary
+
+"Python dictionaries allow you to work with related sets of data. A dictionary is a collection of key/value pairs. Think of it like a group of variables inside of a container, where the key is the name of the variable, and the value is the value stored inside it."
+
+-   created by using curly braces `{}` and the colon `:`to denote a dictionary. 
+
+```python
+planet = {
+    'name': 'Earth',
+    'moons': 1
+}
+```
+
+### Reading dictionary values
+- The `get` method will allow you to access a value by using its key. 
+
+```python
+print(planet.get('name'))
+```
+
+- you can also use square bracket notation `[]`. This method uses less code than `get` and most programmers use this syntax indead.
+
+```python
+print(planet['name'])
+```
+
+**remember**
+
+"Although the behavior of get and the square brackets `([ ])` is generally the same for retrieving items, there's one key difference. If a key isn't available, get returns None, and `[ ]` raises a KeyError."
+
+```python
+wibble = planet.get('wibble') # Returns None
+wibble = planet['wibble'] # Throws KeyError
+```
+
+### Modify dictionary values
+
