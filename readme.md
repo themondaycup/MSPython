@@ -677,3 +677,70 @@ print(f'There was {total_rainfall}cm in the last quarter.')
 
 #There was 10.8cm in the last quarter.
 ```
+
+# Functions
+
+### Functions with no arguments
+
+Funtions use the `def` keyword follow by a name, parentheses, and the body of the function code:
+
+```python
+def rocket_parts(): #rocket_parts is the name of the function
+    print("payload, propellant, structure")
+```
+"In python, if a function doesn't explicitly return a value, it implicitly returns `none`. Updating the function to return the string instead of printing it causes the `output` variable to have a different value:
+
+```python
+def rocket_parts():
+    return "payload, propellant, structure"
+output = rocket_parts()
+output
+```
+
+### Required and optional arguments
+
+A built-in function that requires an argument is `any()`. It takes an iterable(example, a list) and returns `true` if any item is `true` otherwise it returns `false`.
+
+```python
+any([True, False, False])
+#returns True
+
+any([False, False, False])
+#returns False
+```
+
+An error message will show that at least one argument is needed when calling `any()` without any argument. 
+
+### Requiring an argument
+
+Required inputs are called *arguments* to a function. An arguments can be a destination to caluclate travel distance.
+
+```python
+def distance_from_earth(destination):
+    if destination == "Moon":
+        return "238,855"
+    else:
+        return "Unable to compute to that destination"
+```
+
+### Multiple required arguments
+
+When using multiple arguments, you must separeate them by using a comma. 
+
+```python
+def days_to_complete(distance, speed):
+    hours = distance / speed
+    return hours/24
+```
+
+### Functions as arguments
+
+Its possible to use a value and assign it to a varaible.
+
+```python
+total_days = days_to_complete(238855, 75)
+round(total_days)
+```
+
+### Using keyword arguments in Python
+
